@@ -1,0 +1,13 @@
+[package]
+name = "hello-world"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap.workspace = true
+deno_resolver.workspace = true
+deno_runtime.workspace = true
+deno-utils.workspace = true
+sys_traits.workspace = true
+tokio.workspace = true
+
