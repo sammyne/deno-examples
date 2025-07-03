@@ -970,6 +970,24 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "147be55d677052dabc6b22252d5dd0fd4c29c8c27aa4f2fbef0f94aa003b406f"
 
 [[package]]
+name = "core-extension-quickstart-cli"
+version = "0.1.0"
+dependencies = [
+ "clap",
+ "core-extension-quickstart-ext",
+ "deno_core",
+ "libdeno",
+ "tokio",
+]
+
+[[package]]
+name = "core-extension-quickstart-ext"
+version = "0.1.0"
+dependencies = [
+ "deno_core",
+]
+
+[[package]]
 name = "core-foundation"
 version = "0.9.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1263,13 +1281,6 @@ checksum = "bef552e6f588e446098f6ba40d89ac146c8c7b64aade83c051ee00bb5d2bc18d"
 dependencies = [
  "serde",
  "uuid",
-]
-
-[[package]]
-name = "deno-utils"
-version = "0.1.0"
-dependencies = [
- "deno_runtime",
 ]
 
 [[package]]
@@ -2814,6 +2825,24 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "31ae425815400e5ed474178a7a22e275a9687086a12ca63ec793ff292d8fdae8"
 
 [[package]]
+name = "extension-quickstart"
+version = "0.1.0"
+dependencies = [
+ "clap",
+ "deno_core",
+ "extension-quickstart-ext",
+ "libdeno",
+ "tokio",
+]
+
+[[package]]
+name = "extension-quickstart-ext"
+version = "0.1.0"
+dependencies = [
+ "deno_core",
+]
+
+[[package]]
 name = "fallible-iterator"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3451,10 +3480,7 @@ name = "hello-world"
 version = "0.1.0"
 dependencies = [
  "clap",
- "deno-utils",
- "deno_resolver",
- "deno_runtime",
- "sys_traits",
+ "libdeno",
  "tokio",
 ]
 
@@ -4210,6 +4236,16 @@ name = "libc"
 version = "0.2.174"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1171693293099992e19cddea4e8b849964e9846f4acee11b3948bcc337be8776"
+
+[[package]]
+name = "libdeno"
+version = "0.1.0"
+dependencies = [
+ "deno_core",
+ "deno_resolver",
+ "deno_runtime",
+ "sys_traits",
+]
 
 [[package]]
 name = "libffi"
@@ -6340,7 +6376,7 @@ dependencies = [
  "cfg-if",
  "libc",
  "psm",
- "windows-sys 0.52.0",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]

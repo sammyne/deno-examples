@@ -1,0 +1,25 @@
+[package]
+name = "extension-quickstart"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap.workspace = true
+libdeno.workspace = true
+deno_core.workspace = true
+#deno_runtime.workspace = true
+tokio.workspace = true
+
+#sys_traits.workspace = true
+
+[dependencies.ext]
+package = "extension-quickstart-ext"
+path = "../ext"
+
+[build-dependencies]
+deno_core.workspace = true
+libdeno.workspace = true
+
+[build-dependencies.ext]
+package = "extension-quickstart-ext"
+path = "../ext"

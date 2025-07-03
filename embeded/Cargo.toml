@@ -1,27 +1,36 @@
 [workspace]
-members = ["crates/*", "examples/*"]
+members = [
+  "crates/*",
+  "examples-core-extension/*/*",
+  "examples-extension/*/*",
+  "examples/*",
+#  "examples/extension-quickstart/greeter-ext",
+]
 
 resolver = "3"
 
 [workspace.dependencies]
-deno_resolver = "0.40"
+deno_core = "0.352"
 
 [workspace.dependencies.clap]
 features = ["derive"]
 version = "4"
 
-[workspace.dependencies.deno-utils]
-path = "crates/deno-utils"
+[workspace.dependencies.libdeno]
+path = "crates/libdeno"
 
-[workspace.dependencies.deno_runtime]
+#[workspace.dependencies.deno_runtime]
 # deno 的 ext 包含 typescript 源码，依赖 transpile 特性将其转义为 javascript。否则 JSRuntime 会报错。
-features = ["snapshot", "transpile"]
-version = "0.217"
+#features = ["snapshot", "transpile"]
+#version = "0.217"
 
-[workspace.dependencies.sys_traits]
-version = "0.1"
-features = ["getrandom", "filetime", "libc", "real"]
+#[workspace.dependencies.sys_traits]
+#version = "0.1"
+#features = ["getrandom", "filetime", "libc", "real"]
 
 [workspace.dependencies.tokio]
 features = ["full"]
 version = "1.45"
+
+#[patch.crates-io]
+#deno_core.path = "/github.com/denoland/deno_core/core"
