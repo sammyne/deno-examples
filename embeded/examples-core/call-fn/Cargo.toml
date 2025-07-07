@@ -1,0 +1,10 @@
+[package]
+name = "core-call-fn"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap.workspace = true
+libdeno.workspace = true
+deno_core.workspace = true
+tokio.workspace = true
