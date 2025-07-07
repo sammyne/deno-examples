@@ -2,6 +2,7 @@
 members = [
   "crates/*",
   "examples-core-extension/*/*",
+  "examples-core/*",
   "examples-extension/*/*",
   "examples/*",
 #  "examples/extension-quickstart/greeter-ext",
