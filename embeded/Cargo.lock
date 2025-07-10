@@ -998,6 +998,23 @@ dependencies = [
 ]
 
 [[package]]
+name = "core-extension-op-state-cli"
+version = "0.1.0"
+dependencies = [
+ "clap",
+ "core-extension-op-state-ext",
+ "libdeno",
+ "tokio",
+]
+
+[[package]]
+name = "core-extension-op-state-ext"
+version = "0.1.0"
+dependencies = [
+ "deno_core",
+]
+
+[[package]]
 name = "core-extension-quickstart-cli"
 version = "0.1.0"
 dependencies = [
@@ -4289,6 +4306,7 @@ name = "libdeno"
 version = "0.1.0"
 dependencies = [
  "deno_core",
+ "deno_error",
  "deno_resolver",
  "deno_runtime",
  "sys_traits",
