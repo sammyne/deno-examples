@@ -10,8 +10,7 @@ features = ["snapshot", "transpile"]
 [dependencies]
 deno_core.workspace = true
 deno_resolver = "0.40"
-#deno_runtime.workspace = true
-#sys_traits.workspace = true
+deno_error.workspace = true
 
 [dependencies.deno_runtime]
 # deno 的 ext 包含 typescript 源码，依赖 transpile 特性将其转义为 javascript。否则 JSRuntime 会报错。
