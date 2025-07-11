@@ -11,7 +11,7 @@ fn main() {
     let options = CreateSnapshotOptions {
         cargo_manifest_dir: env!("CARGO_MANIFEST_DIR"),
         startup_snapshot: None,
-        extensions: vec![core_extension_quickstart_ext::hello_world::init()],
+        extensions: vec![ext::hello_world::init()],
         with_runtime_cb: None,
         skip_op_registration: false,
         extension_transpiler: None,
