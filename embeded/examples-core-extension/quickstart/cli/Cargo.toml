@@ -9,8 +9,13 @@ libdeno.workspace = true
 deno_core.workspace = true
 tokio.workspace = true
 
-core-extension-quickstart-ext.path = "../ext"
+[dependencies.ext]
+package = "core-extension-quickstart-ext"
+path = "../ext"
 
 [build-dependencies]
 libdeno.workspace = true
-core-extension-quickstart-ext.path = "../ext"
+
+[build-dependencies.ext]
+package = "core-extension-quickstart-ext"
+path = "../ext"
