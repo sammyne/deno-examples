@@ -1,0 +1,21 @@
+[package]
+name = "core-extension-quickstart-async-cli"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap.workspace = true
+libdeno.workspace = true
+deno_core.workspace = true
+tokio.workspace = true
+
+[dependencies.ext]
+package = "core-extension-quickstart-async-ext"
+path = "../ext"
+
+[build-dependencies]
+libdeno.workspace = true
+
+[build-dependencies.ext]
+package = "core-extension-quickstart-async-ext"
+path = "../ext"
