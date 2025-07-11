@@ -1015,6 +1015,24 @@ dependencies = [
 ]
 
 [[package]]
+name = "core-extension-pass-v8-args-cli"
+version = "0.1.0"
+dependencies = [
+ "clap",
+ "core-extension-pass-v8-args-ext",
+ "deno_core",
+ "libdeno",
+ "tokio",
+]
+
+[[package]]
+name = "core-extension-pass-v8-args-ext"
+version = "0.1.0"
+dependencies = [
+ "deno_core",
+]
+
+[[package]]
 name = "core-extension-quickstart-async-cli"
 version = "0.1.0"
 dependencies = [
