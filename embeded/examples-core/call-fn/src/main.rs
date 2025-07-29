@@ -1,7 +1,8 @@
 use std::path::Path;
 use std::rc::Rc;
 
-use deno_core::v8;
+use deno_core::serde_json::{Value, json};
+use deno_core::{serde_v8, v8};
 use libdeno::core::anyhow::{self, Context};
 use libdeno::core::{FsModuleLoader, JsRuntime, RuntimeOptions};
 use libdeno::x::url;
@@ -53,6 +54,25 @@ async fn main() -> anyhow::Result<()> {
         let who = v8::String::new(scope, "sammyne").context("new v8 string")?.into();
 
         let _ = f.call(scope, undef.into(), &[who]);
+    }
+
+    // 调用 hi(v): void
+    {
+        let name = v8::String::new(scope, "hi").context("new v8 string 'hi'")?.into();
+        let f = namespace
+            .get(scope, name)
+            .ok_or_else(|| anyhow::anyhow!("miss export 'hello'"))?
+            .cast::<v8::Function>();
+
+        let undef = v8::undefined(scope);
+
+        let v: Value = json!({
+            "a": 123,
+            "b": "hello world",
+        });
+        let v = serde_v8::to_v8(scope, v).context("adapt arg for V8")?;
+
+        let _ = f.call(scope, undef.into(), &[v]);
     }
 
     Ok(())
