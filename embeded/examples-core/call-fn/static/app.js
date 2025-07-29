@@ -6,8 +6,10 @@ function world() {
   console.log("Hello World");
 }
 
-// console.log("Hello World");
+function hi(v) {
+  console.log(`Hi ${v.a}-${v.b}`);
+}
 
 export {
-  hello, world
+  hello, world,hi
 }
